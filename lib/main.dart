@@ -1,11 +1,19 @@
 import 'package:farawlah_app/constants.dart';
+import 'package:farawlah_app/constents/firebase.dart';
+import 'package:farawlah_app/controller/auth_controller.dart';
+import 'package:farawlah_app/controller/product_controller.dart';
 import 'package:farawlah_app/views/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await firebaseInitialization.then((value) {
+    Get.put(UserController());
+    Get.put(ProductCtr());
+  });
   runApp(const MyApp());
 }
 

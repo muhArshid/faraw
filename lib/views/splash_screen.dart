@@ -2,8 +2,10 @@ import 'package:farawlah_app/utils/AppColorCode.dart';
 import 'package:farawlah_app/utils/AppFontOswald.dart';
 import 'package:farawlah_app/utils/asset_constants.dart';
 import 'package:farawlah_app/views/screens/all_products_details.dart';
+import 'package:farawlah_app/views/screens/auth/main_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -16,7 +18,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 1), () {
-      Get.offAll(() => const AllProductsScreen());
+      if (FirebaseAuth.instance.currentUser?.uid == null) {
+        Get.offAll(() => const AuthScreen());
+      } else {
+        Get.offAll(() => const AllProductsScreen());
+      }
     });
     super.initState();
   }
@@ -31,13 +37,6 @@ class _SplashScreenState extends State<SplashScreen> {
         height: size.height,
         decoration: const BoxDecoration(
           color: AppColorCode.greenColor,
-          // image: new DecorationImage(
-          //     fit: BoxFit.cover,
-          //     colorFilter: ColorFilter.mode(
-          //         Colors.black.withOpacity(0.1), BlendMode.dstATop),
-          //     image: new AssetImage(
-          //       AssetConstant.bgImage,
-          //     )),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

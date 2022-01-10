@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "858158705617",
+    "project_id": "farawlah-47881",
+    "storage_bucket": "farawlah-47881.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858158705617:android:7e187fde9ab46b4d70cef0",
+        "android_client_info": {
+          "package_name": "com.farawlah.farawlah_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "858158705617-9lc9sn31f9nqlih75hfccpggjgrlo1pc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMap4-70L88htS6k9RvL6pTJqk-TYYJFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "858158705617-9lc9sn31f9nqlih75hfccpggjgrlo1pc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
